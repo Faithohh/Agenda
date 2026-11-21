@@ -55,14 +55,14 @@
                         <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400">
 
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
                             </svg>
 
                         </div>
 
                         <span class="text-gray-400 group-hover:text-blue-500 transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/>
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
                             </svg>
                         </span>
 
@@ -71,6 +71,10 @@
                     <h3 class="font-semibold text-gray-800 dark:text-white">
                         Mis tareas
                     </h3>
+
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mt-2">
+                        {{ $tareasPendientes }}
+                    </p>
 
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                         Organiza tus actividades y pendientes.
@@ -86,15 +90,15 @@
                         <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400">
 
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2"/>
-                                <path stroke-width="2" stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"/>
+                                <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2" />
+                                <path stroke-width="2" stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18" />
                             </svg>
 
                         </div>
 
                         <span class="text-gray-400 group-hover:text-purple-500 transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/>
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
                             </svg>
                         </span>
 
@@ -103,6 +107,10 @@
                     <h3 class="font-semibold text-gray-800 dark:text-white">
                         Eventos y citas
                     </h3>
+
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mt-2">
+                        {{ $eventosProximos }}
+                    </p>
 
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                         Administra tus compromisos importantes.
@@ -118,14 +126,14 @@
                         <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-500/10 flex items-center justify-center text-amber-600 dark:text-amber-400">
 
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6V11a6 6 0 00-12 0v5l-2 2h16l-2-2z"/>
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6V11a6 6 0 00-12 0v5l-2 2h16l-2-2z" />
                             </svg>
 
                         </div>
 
                         <span class="text-gray-400 group-hover:text-amber-500 transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/>
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
                             </svg>
                         </span>
 
@@ -134,6 +142,10 @@
                     <h3 class="font-semibold text-gray-800 dark:text-white">
                         Recordatorios
                     </h3>
+
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mt-2">
+                        {{ $recordatoriosPendientes }}
+                    </p>
 
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                         No olvides tus actividades importantes.
@@ -149,15 +161,15 @@
                         <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
 
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2"/>
-                                <path stroke-width="2" stroke-linecap="round" d="M3 10h18M8 2v4m8-4v4"/>
+                                <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2" />
+                                <path stroke-width="2" stroke-linecap="round" d="M3 10h18M8 2v4m8-4v4" />
                             </svg>
 
                         </div>
 
                         <span class="text-gray-400 group-hover:text-emerald-500 transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/>
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
                             </svg>
                         </span>
 
@@ -172,6 +184,27 @@
                     </p>
 
                 </a>
+
+                <!-- Tareas completadas -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm">
+
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-5">
+
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+
+                    </div>
+
+                    <h3 class="font-semibold text-gray-800 dark:text-white">
+                        Tareas completadas
+                    </h3>
+
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mt-2">
+                        {{ $tareasCompletadas }}
+                    </p>
+
+                </div>
 
             </div>
 
@@ -197,25 +230,100 @@
 
                 </div>
 
-                <div class="flex flex-col items-center justify-center text-center py-12">
+                @if ($proximasActividades->isEmpty())
 
-                    <div class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
+                    <div class="flex flex-col items-center justify-center text-center py-12">
 
-                        <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h8M8 15h5m-9 6h14a2 2 0 002-2V5a2 2 0 00-2-2H7L4 6v13a2 2 0 002 2z"/>
-                        </svg>
+                        <div class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
+
+                            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h8M8 15h5m-9 6h14a2 2 0 002-2V5a2 2 0 00-2-2H7L4 6v13a2 2 0 002 2z" />
+                            </svg>
+
+                        </div>
+
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-200">
+                            No tienes actividades próximas
+                        </h3>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-sm">
+                            Cuando registres tus primeras tareas y eventos, aparecerán aquí.
+                        </p>
 
                     </div>
 
-                    <h3 class="font-semibold text-gray-700 dark:text-gray-200">
-                        Tu agenda está lista
-                    </h3>
+                @else
 
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-sm">
-                        Cuando registres tus primeras tareas y eventos, podrás consultarlos desde este espacio.
-                    </p>
+                    <div class="space-y-4">
 
-                </div>
+                        @foreach ($proximasActividades as $actividad)
+
+                            <div class="flex items-center gap-4 p-3 rounded-xl border border-gray-200 dark:border-gray-700">
+
+                                @if ($actividad->tipo_actividad == 'Tarea')
+
+                                    <div class="w-11 h-11 rounded-xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+                                        </svg>
+
+                                    </div>
+
+                                @else
+
+                                    <div class="w-11 h-11 rounded-xl bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
+
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2" />
+                                            <path stroke-width="2" stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18" />
+                                        </svg>
+
+                                    </div>
+
+                                @endif
+
+                                <div class="flex-1 min-w-0">
+
+                                    <h3 class="font-semibold text-gray-800 dark:text-white truncate">
+                                        {{ $actividad->titulo }}
+                                    </h3>
+
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">
+
+                                        {{ $actividad->tipo_actividad }} ·
+
+                                        @if ($actividad->tipo_actividad == 'Tarea')
+                                            {{ \Carbon\Carbon::parse($actividad->fecha_actividad)->format('d/m/Y') }}
+                                        @else
+                                            {{ \Carbon\Carbon::parse($actividad->fecha_actividad)->format('d/m/Y H:i') }}
+                                        @endif
+
+                                    </p>
+
+                                </div>
+
+                                @if ($actividad->tipo_actividad == 'Tarea')
+
+                                    <span class="text-xs font-medium text-blue-600 dark:text-blue-400">
+                                        {{ $actividad->estado == 'pendiente' ? 'Pendiente' : 'En progreso' }}
+                                    </span>
+
+                                @else
+
+                                    <span class="text-xs font-medium text-purple-600 dark:text-purple-400">
+                                        Evento
+                                    </span>
+
+                                @endif
+
+                            </div>
+
+                        @endforeach
+
+                    </div>
+
+                @endif
 
             </div>
 
@@ -237,7 +345,7 @@
                         <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
 
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" d="M12 5v14m-7-7h14"/>
+                                <path stroke-width="2" stroke-linecap="round" d="M12 5v14m-7-7h14" />
                             </svg>
 
                         </div>
@@ -258,8 +366,8 @@
                         <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
 
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2"/>
-                                <path stroke-width="2" stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"/>
+                                <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2" />
+                                <path stroke-width="2" stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18" />
                             </svg>
 
                         </div>
@@ -280,7 +388,7 @@
                         <div class="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
 
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6V11a6 6 0 00-12 0v5l-2 2h16l-2-2z"/>
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6V11a6 6 0 00-12 0v5l-2 2h16l-2-2z" />
                             </svg>
 
                         </div>
