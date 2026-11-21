@@ -1,15 +1,34 @@
 <?php
 
+use App\Http\Controllers\CalendarioController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EventoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TareaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/tareas', [TareaController::class, 'index'])->name('tareas.index');
+    Route::get('/tareas/crear', [TareaController::class, 'create'])->name('tareas.create');
+    Route::post('/tareas', [TareaController::class, 'store'])->name('tareas.store');
+    Route::patch('/tareas/{id}/completar', [TareaController::class, 'completar'])->name('tareas.completar');
+    Route::get('/tareas/{id}/editar', [TareaController::class, 'edit'])->name('tareas.edit');
+    Route::put('/tareas/{id}', [TareaController::class, 'update'])->name('tareas.update');
+    Route::delete('/tareas/{id}', [TareaController::class, 'destroy'])->name('tareas.destroy');
+
+    Route::get('/eventos', [EventoController::class, 'index'])->name('eventos.index');
+    Route::post('/eventos', [EventoController::class, 'store'])->name('eventos.store');
+    Route::put('/eventos/{id}', [EventoController::class, 'update'])->name('eventos.update');
+    Route::delete('/eventos/{id}', [EventoController::class, 'destroy'])->name('eventos.destroy');
+
+    Route::get('/calendario', [CalendarioController::class, 'index'])->name('calendario.index');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

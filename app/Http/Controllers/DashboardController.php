@@ -14,7 +14,7 @@ class DashboardController extends Controller
         $usuario = Auth::id();
 
         $tareasPendientes = Tarea::where('user_id', $usuario)
-            ->where('estado', 'pendiente')
+            ->whereIn('estado', ['pendiente', 'en_progreso'])
             ->count();
 
         $tareasCompletadas = Tarea::where('user_id', $usuario)
@@ -22,7 +22,7 @@ class DashboardController extends Controller
             ->count();
 
         $eventosProximos = Evento::where('user_id', $usuario)
-            ->where('fecha_inicio', '>=', now())
+            ->where('fecha_inicio', '>=', now()->startOfDay())
             ->count();
 
         $recordatoriosPendientes = Recordatorio::where('user_id', $usuario)
@@ -31,23 +31,26 @@ class DashboardController extends Controller
 
         $proximasTareas = Tarea::where('user_id', $usuario)
             ->whereIn('estado', ['pendiente', 'en_progreso'])
-            ->whereDate('fecha_vencimiento', '>=', today())
+            ->where(function ($query) {
+                $query->whereDate('fecha_vencimiento', '>=', today())
+                      ->orWhereNull('fecha_vencimiento');
+            })
             ->orderBy('fecha_vencimiento', 'asc')
             ->take(5)
             ->get();
 
         $proximosEventos = Evento::where('user_id', $usuario)
-            ->where('fecha_inicio', '>=', now())
+            ->where('fecha_inicio', '>=', now()->startOfDay())
             ->orderBy('fecha_inicio', 'asc')
             ->take(5)
             ->get();
 
         $proximasActividades = $proximasTareas->map(function ($tarea) {
             $tarea->tipo_actividad = 'Tarea';
-            $tarea->fecha_actividad = $tarea->fecha_vencimiento;
+            $tarea->fecha_actividad = $tarea->fecha_vencimiento ?? $tarea->created_at;
 
             return $tarea;
-        })->merge($proximosEventos->map(function ($evento) {
+        })->concat($proximosEventos->map(function ($evento) {
             $evento->tipo_actividad = 'Evento';
             $evento->fecha_actividad = $evento->fecha_inicio;
 
