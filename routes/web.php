@@ -6,6 +6,8 @@ use App\Http\Controllers\EventoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TareaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EstadisticaController;
+use App\Http\Controllers\CategoriaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,6 +36,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/estadisticas', [EstadisticaController::class, 'index'])->name('estadisticas.index');
+    Route::post('/categorias', [CategoriaController::class, 'store'])->name('categorias.store');
+    Route::post('/categorias/predeterminadas', [CategoriaController::class, 'predeterminadas'])->name('categorias.predeterminadas');
+    Route::delete('/categorias/{id}', [CategoriaController::class, 'destroy'])->name('categorias.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

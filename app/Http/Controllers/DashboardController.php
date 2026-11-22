@@ -21,9 +21,7 @@ class DashboardController extends Controller
             ->where('estado', 'completada')
             ->count();
 
-        $eventosProximos = Evento::where('user_id', $usuario)
-            ->where('fecha_inicio', '>=', now()->startOfDay())
-            ->count();
+        $eventosProximos = Evento::where('user_id', $usuario)->count();
 
         $recordatoriosPendientes = Recordatorio::where('user_id', $usuario)
             ->where('notificado', false)
@@ -31,16 +29,11 @@ class DashboardController extends Controller
 
         $proximasTareas = Tarea::where('user_id', $usuario)
             ->whereIn('estado', ['pendiente', 'en_progreso'])
-            ->where(function ($query) {
-                $query->whereDate('fecha_vencimiento', '>=', today())
-                      ->orWhereNull('fecha_vencimiento');
-            })
-            ->orderBy('fecha_vencimiento', 'asc')
+            ->orderByRaw('fecha_vencimiento IS NULL, fecha_vencimiento ASC')
             ->take(5)
             ->get();
 
         $proximosEventos = Evento::where('user_id', $usuario)
-            ->where('fecha_inicio', '>=', now()->startOfDay())
             ->orderBy('fecha_inicio', 'asc')
             ->take(5)
             ->get();

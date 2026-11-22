@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Categoria;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,13 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $categorias = Categoria::where('user_id', $request->user()->id)
+            ->orderBy('nombre', 'asc')
+            ->get();
+
         return view('profile.edit', [
             'user' => $request->user(),
+            'categorias' => $categorias,
         ]);
     }
 

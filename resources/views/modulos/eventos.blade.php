@@ -709,5 +709,6 @@
     @endif
 
     <script src="{{ asset('js/eventos.js') }}" defer></script>
+    
 
 </x-app-layout>
